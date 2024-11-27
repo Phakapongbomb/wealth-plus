@@ -1,0 +1,60 @@
+@import "variables.less";
+
+.container @{global} {
+    background-color: #112B29;
+    height: auto;
+    max-height: 130rem;
+
+    .sec1 {
+        padding-top: 10rem;
+        display: flex;
+        justify-content: center;
+        gap: 6.5rem;
+        align-items: center;
+
+        .sec1_text {
+            .group_title {
+                display: flex;
+                gap: 1.6rem;
+                align-items: center;
+
+                .ic_crown {
+                    background-image: url(/image/icon/ic-crown.svg);
+                    height: 4rem;
+                    width: 100%;
+                    max-width: 4rem;
+
+                }
+
+                .subtext {
+                    font-size: 3.7rem;
+                    text-transform: uppercase;
+                }
+            }
+
+            .sec1_title {
+                font-size: 14.5rem;
+                line-height: 15.3rem;
+                text-transform: uppercase;
+
+                font-family: DB Helvethaica X;
+                letter-spacing: -0.5rem;
+            }
+
+            .sec1_subtitle {
+                font-size: 3.5rem;
+                line-height: 3.5rem;
+            }
+        }
+        .sec1_img {
+            .img {
+                width: 100%;
+                max-width: 37.6rem;
+                height: auto;
+                max-height: 55.7rem;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}

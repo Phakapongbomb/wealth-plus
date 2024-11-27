@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'DB Helvethaica X';
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'DB Helvethaica X';
+  src: url('/fonts/DBHelvethaicaX-Regular.woff2') format('woff2'),
+       url('/fonts/DBHelvethaicaX-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DB Helvethaica X';
+  src: url('/fonts/DBHelvethaicaX-75Bd.woff2') format('woff2'),
+       url('/fonts/DBHelvethaicaX-75Bd.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+[data-font="reg"] {
+  font-family: 'DB Helvethaica X';
+  font-weight: normal;
+}
+
+[data-font="bol"] {
+  font-family: 'DB Helvethaica X';
+  font-weight: bold;
+}
