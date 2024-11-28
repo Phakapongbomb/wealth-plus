@@ -35,6 +35,7 @@
   line-height: 2.4rem;
   white-space: nowrap;
   border-radius: 200px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 .container :global .box_botton:hover {

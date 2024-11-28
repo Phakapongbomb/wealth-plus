@@ -19,11 +19,13 @@ a {
 
 @font-face {
   font-family: 'DB Helvethaica X';
-  src: url('/fonts/DBHelvethaicaX-Regular.woff2') format('woff2'),
-       url('/fonts/DBHelvethaicaX-Regular.woff') format('woff');
+  src: url('/fonts/DBHelvethaicaX-55Regular.woff2') format('woff2'),
+       url('/fonts/DBHelvethaicaX-55Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
+
 
 @font-face {
   font-family: 'DB Helvethaica X';
