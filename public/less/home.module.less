@@ -230,7 +230,7 @@
         }
 
         &.sec2 {
-
+            background: linear-gradient(180deg, rgba(233, 233, 233, 0) 0%, #EFEFEF 100%);
             padding-top: 7rem;
             padding-bottom: 10rem;
             display: flex;
@@ -320,10 +320,15 @@
                 position: absolute;
                 top: -70%;
                 border-radius: 50%;
-                background: linear-gradient(to bottom, #08E69300, #08E6934D);
+
                 width: 128rem;
                 height: 128rem;
                 padding: 0.2rem;
+
+                img {
+                    width: inherit;
+                    height: inherit;
+                }
 
                 &.line2 {
                     width: 72.6rem;
@@ -331,6 +336,7 @@
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
+                    z-index: 999;
                 }
 
                 &.line3 {
@@ -340,13 +346,139 @@
                     left: 50%;
                     transform: translate(-50%, -50%);
                 }
+            }
+        }
 
-                .inner_circle {
-                    position: relative;
-                    background-color: #fff;
+        &.sec3 {
+            position: relative;
+            padding-top: 7rem;
+            padding-bottom: 12rem;
+
+            .bg {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                max-height: 40rem;
+                height: auto;
+
+                img {
+                    max-height: 40rem;
                     width: 100%;
-                    height: 100%;
-                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+            .group_text {
+                position: inherit;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 1.4rem;
+
+                .subtitle {
+                    font-size: 3rem;
+                    line-height: 3.5rem;
+                }
+
+                .title {
+                    font-size: 6rem;
+                    line-height: 5.4rem;
+                }
+            }
+
+            .contianer_card {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                margin-top: 5rem;
+                height: 33.4rem;
+
+                .container {
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    max-width: 28rem;
+                    transition: all 0.3s ease;
+
+                    .group_img {
+                        position: relative;
+                        transition: all 0.3s ease;
+
+                        .image {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        .text-overlay {
+                            position: absolute;
+                            width: 100%;
+                            bottom: 10%;
+                            color: white;
+                            font-size: 3rem;
+                            line-height: 3.5rem;
+                            text-align: center;
+                        }
+
+                        .linear {
+                            transition: all ease .3s;
+                            background: transparent;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                        }
+                    }
+
+                    .box_hover {
+                        display: flex;
+                        height: 0;
+                        transition: all ease .3s;
+
+                        .ic_arrow>img {
+                            height: 0;
+                        }
+                    }
+
+                    &:hover {
+                        .group_img {
+                            .linear {
+                                transition: all ease .3s;
+                                background: linear-gradient(180deg, rgba(8, 229, 147, 0) 0%, #2FCA6E 100%);
+                            }
+                        }
+
+                        .box_hover {
+                            transition: all ease .3s;
+                            align-items: center;
+                            justify-content: center;
+                            height: 5rem;
+
+                            .text_hover {
+                                color: #000;
+                                font-size: 2.4rem;
+                            }
+
+                            .ic_arrow {
+                                height: auto;
+                                margin-left: 1rem;
+                                width: 100%;
+                                height: 3rem;
+                                border-radius: 50%;
+                                max-width: 3rem;
+                                max-height: 3rem;
+                                background-color: #00C791;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                img {
+                                    width: 0.5rem;
+                                    height: 1rem;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

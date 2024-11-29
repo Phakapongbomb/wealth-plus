@@ -31,6 +31,25 @@ export default function Home() {
             subtitle: "เปิดบัญชีสร้างแผนได้ทันทีบน Wealth PLUS",
         },
     ];
+
+    const mock_card_data = [
+        {
+            img: "/image/home/Card_1.png",
+            text: "เพื่อการออมเงิน",
+        },
+        {
+            img: "/image/home/Card_2.png",
+            text: "เพื่อการลดหย่อนภาษี",
+        },
+        {
+            img: "/image/home/Card_3.png",
+            text: "เพื่อการเกษียณ",
+        },
+        {
+            img: "/image/home/Card_4.png",
+            text: "เพื่อธุรกิจ",
+        },
+    ];
     return (
         <>
             <div className={css.container}>
@@ -135,13 +154,11 @@ export default function Home() {
                 </div>
                 <div className="layout_container sec2">
                     <div className="line_circle line1">
-                        <div className="inner_circle">
-                            <div className="line_circle line2">
-                                <div className="inner_circle">
-                                    <div className="line_circle line3">
-                                        <div className="inner_circle"></div>
-                                    </div>
-                                </div>
+                        <img src="/image/icon/line-linear.svg" />
+                        <div className="line_circle line2">
+                            <img src="/image/icon/line-linear.svg" />
+                            <div className="line_circle line3">
+                                <img src="/image/icon/line-linear.svg" />
                             </div>
                         </div>
                     </div>
@@ -168,6 +185,23 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
+                <div className="layout_container sec3">
+                    <div className="bg">
+                        <img src={`/image/home/background_sec3.png`} />
+                    </div>
+                    <div className="group_text" data-font={`bol`}>
+                        <div className="subtitle">แผนการลงทุน</div>
+                        <div className="title">เลือกเป้าหมายที่คุณสนใจ</div>
+                    </div>
+                    <div className="contianer_card">
+                        {mock_card_data.map((data, i) => {
+                            return (
+                                <Card_goal key={i} img={data.img} text={data.text} />
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
         </>
     );
@@ -182,6 +216,24 @@ const CardHighlight = (props) => {
             </div>
             <div className="title_card">{title}</div>
             <div className="subtitle_card">{subtitle}</div>
+        </div>
+    );
+};
+
+const Card_goal = ({ img, text }) => {
+    return (
+        <div class="container">
+            <div className="group_img">
+                <img src={img} alt="Example Image" class="image" />
+                <div class="text-overlay" data-font={`bol`}>{text}</div>
+                <div class="linear"></div>
+            </div>
+            <div className="box_hover">
+                <div className="text_hover">สร้างแผนเลย</div>
+                <div className="ic_arrow">
+                    <img src="/image/icon/arrow.svg"/>
+                </div>
+            </div>
         </div>
     );
 };
