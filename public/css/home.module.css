@@ -8,6 +8,7 @@
 }
 .container :global .layout_container.sec1 {
   background-color: #112B29;
+  color: #fff;
 }
 .container :global .layout_container.sec1 .inner {
   max-width: 128rem;
@@ -78,6 +79,12 @@
   top: 0;
   left: 0;
   height: auto;
+}
+.container :global .layout_container.sec1 .sec1 .sec1_img .img_animete:nth-child(odd) {
+  animation: bounce-down 2s infinite ease-in-out;
+}
+.container :global .layout_container.sec1 .sec1 .sec1_img .img_animete:nth-child(even) {
+  animation: bounce-up 2s infinite ease-in-out;
 }
 .container :global .layout_container.sec1 .sec1 .sec1_img .img_animete.coin {
   z-index: 99;
@@ -161,8 +168,8 @@
 .container :global .layout_container.sec1 .box_bg_2 {
   position: absolute;
   bottom: 5%;
-  left: -50%;
-  transform: translateX(50%);
+  left: -35%;
+  animation: rotate-left 5s infinite linear;
 }
 .container :global .layout_container.sec1 .box_bg_2 .img_bg_2 {
   object-fit: cover;
@@ -174,9 +181,9 @@
 .container :global .layout_container.sec1 .box_bg_3 {
   position: absolute;
   top: -20%;
-  right: -60%;
+  right: -45%;
   z-index: 0;
-  transform: translateX(-50%) scale(0.9);
+  animation: rotate-left 5s infinite linear;
 }
 .container :global .layout_container.sec1 .box_bg_3 .img_bg_3 {
   object-fit: cover;
@@ -262,10 +269,13 @@
 .container :global .layout_container.sec2 .line_circle {
   position: absolute;
   top: -70%;
-  border-radius: 50%;
   width: 128rem;
   height: 128rem;
-  padding: 0.2rem;
+  animation: rotate-right 3s infinite linear;
+  transform: translateY(-50%) translateY(-50%) rotate(0deg);
+}
+.container :global .layout_container.sec2 .line_circle:nth-child(odd) {
+  animation: rotate-left 3s infinite linear;
 }
 .container :global .layout_container.sec2 .line_circle img {
   width: inherit;
@@ -274,17 +284,12 @@
 .container :global .layout_container.sec2 .line_circle.line2 {
   width: 72.6rem;
   height: 72.6rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 999;
+  top: -50%;
 }
 .container :global .layout_container.sec2 .line_circle.line3 {
   width: 26.8rem;
   height: 26.8rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: -25%;
 }
 .container :global .layout_container.sec3 {
   position: relative;
@@ -309,6 +314,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
+  color: #fff;
 }
 .container :global .layout_container.sec3 .group_text .subtitle {
   font-size: 3rem;
@@ -349,6 +355,7 @@
   font-size: 3rem;
   line-height: 3.5rem;
   text-align: center;
+  z-index: 99;
 }
 .container :global .layout_container.sec3 .contianer_card .container .group_img .linear {
   transition: all ease 0.3s;
@@ -359,9 +366,20 @@
   top: 0;
 }
 .container :global .layout_container.sec3 .contianer_card .container .box_hover {
-  display: flex;
+  opacity: 0;
   height: 0;
+  display: flex;
   transition: all ease 0.3s;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.container :global .layout_container.sec3 .contianer_card .container .box_hover .text_hover {
+  transition: all ease 0.3s;
+  opacity: 0;
+}
+.container :global .layout_container.sec3 .contianer_card .container .box_hover .ic_arrow {
+  border-radius: 50%;
 }
 .container :global .layout_container.sec3 .contianer_card .container .box_hover .ic_arrow > img {
   height: 0;
@@ -371,12 +389,17 @@
   background: linear-gradient(180deg, rgba(8, 229, 147, 0) 0%, #2FCA6E 100%);
 }
 .container :global .layout_container.sec3 .contianer_card .container:hover .box_hover {
+  display: flex;
+  opacity: 1;
   transition: all ease 0.3s;
   align-items: center;
   justify-content: center;
   height: 5rem;
+  color: #000;
 }
 .container :global .layout_container.sec3 .contianer_card .container:hover .box_hover .text_hover {
+  transition: all ease 0.3s;
+  opacity: 1;
   color: #000;
   font-size: 2.4rem;
 }
@@ -392,16 +415,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all ease 0.3s;
+}
+.container :global .layout_container.sec3 .contianer_card .container:hover .box_hover .ic_arrow:hover {
+  background-color: #08E69370;
 }
 .container :global .layout_container.sec3 .contianer_card .container:hover .box_hover .ic_arrow img {
   width: 0.5rem;
   height: 1rem;
-}
-@keyframes rotate {
-  from {
-    top: 0px;
-  }
-  to {
-    top: 200px;
-  }
 }

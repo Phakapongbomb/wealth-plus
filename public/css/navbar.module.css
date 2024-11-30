@@ -1,15 +1,31 @@
 .container :global {
-  padding: 2.6rem 8rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 128rem;
-  position: absolute;
+  position: fixed;
   width: 100%;
+  z-index: 9999;
+  color: #fff;
 }
-.container :global .box_ic {
+.container :global .layout {
+  width: 100%;
+  padding: 0.5rem 8rem 0.5rem;
+  transition: all 0.3s ease;
+}
+.container :global .layout.bg {
+  background: #112B29;
+}
+.container :global .layout .inner_container {
+  max-width: 128rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+.container :global .layout .inner_container .box_ic {
   background-image: url(/image/logo/logo-wealth-plus.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -18,13 +34,13 @@
   max-width: 6.4rem;
   height: 5.4rem;
 }
-.container :global .box_nav {
+.container :global .layout .inner_container .box_nav {
   display: flex;
   gap: 4rem;
   font-size: 2.4rem;
   line-height: 2.4rem;
 }
-.container :global .box_botton {
+.container :global .layout .inner_container .box_botton {
   background-color: #08E592;
   width: 100%;
   max-width: 12.7rem;
@@ -38,7 +54,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.container :global .box_botton:hover {
+.container :global .layout .inner_container .box_botton:hover {
   background-color: #08E69370;
   transition: background-color 0.3s ease;
 }

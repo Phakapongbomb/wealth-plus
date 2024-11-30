@@ -1,0 +1,108 @@
+.footer_container :global {
+  background-color: #112B29;
+  width: 100%;
+  max-height: 23rem;
+  position: relative;
+  overflow: hidden;
+}
+.footer_container :global .inner_container {
+  max-width: 128rem;
+  margin: 0 auto;
+}
+.footer_container :global .circle {
+  position: absolute;
+  width: 100%;
+  max-width: 78.3rem;
+  top: 20%;
+  left: -25%;
+  animation: rotate-left 5s infinite linear;
+}
+.footer_container :global .bubble {
+  width: 100%;
+  max-width: 100rem;
+  position: absolute;
+  transform: rotate(345deg);
+  top: -100%;
+  left: -10%;
+}
+.footer_container :global .content_container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem 8rem;
+}
+.footer_container :global .content_container .group_left {
+  color: #fff;
+}
+.footer_container :global .content_container .group_left .top {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.footer_container :global .content_container .group_left .top .group_text .text_title {
+  font-size: 4.6rem;
+  line-height: 2.5rem;
+  margin-bottom: 0.4rem;
+}
+.footer_container :global .content_container .group_left .top .group_text .text_subtitle {
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
+.footer_container :global .content_container .group_left .bot {
+  margin-top: 4rem;
+  color: #ffffff50;
+  font-size: 1.4rem;
+}
+.footer_container :global .content_container .group_right {
+  width: 100%;
+  max-width: 35.3rem;
+}
+.footer_container :global .content_container .group_right .top_title {
+  color: #08E693;
+  font-size: 4rem;
+  line-height: 4.7rem;
+}
+.footer_container :global .content_container .group_right .top_subtitle {
+  color: #fff;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+}
+.footer_container :global .content_container .group_right .bot {
+  margin-top: 1.6rem;
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+.footer_container :global .content_container .group_right .bot .ic_arrow {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  max-width: 3rem;
+  max-height: 3rem;
+  position: absolute;
+  background-color: #08E693;
+  border-radius: 50%;
+  padding: 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.footer_container :global .content_container .group_right .bot .ic_arrow img {
+  max-width: 0.5rem;
+  max-height: 1rem;
+  height: auto;
+  width: 100%;
+}
+.footer_container :global .content_container .group_right .bot .inp {
+  width: 100%;
+  border: 1px solid #ffffff30;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  color: #fff;
+  font-size: 2rem;
+}
+.footer_container :global .content_container .group_right .bot .inp:placeholder {
+  color: #fff;
+}

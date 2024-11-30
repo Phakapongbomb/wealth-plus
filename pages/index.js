@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import css from "../public/css/home.module.css";
+import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updateData } from "@/component/store/home/homeSlice";
 
 export default function Home() {
     const mock_data = [
@@ -50,10 +53,52 @@ export default function Home() {
             text: "เพื่อธุรกิจ",
         },
     ];
+
+    const state = useSelector((state) => state.home);
+    const { scroll_now } = state;
+    const setState = useDispatch();
+
+    const sec1_ref = useRef(null);
+    const sec2_ref = useRef(null);
+    const sec3_ref = useRef(null);
+
+    const handleScroll = () => {
+        if (sec2_ref.current) {
+            const rect = sec2_ref.current.getBoundingClientRect();
+            const elementTop = rect.top + window.scrollY;
+            const window_now = window.scrollY;
+
+            if (
+                window_now >= elementTop - 0.5 &&
+                window_now <= elementTop + rect.height
+            ) {
+                setState(updateData({ key: "scroll_now", value: true }));
+            } else {
+                setState(updateData({ key: "scroll_now", value: false }));
+            }
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        console.log("state", state);
+    }, [state]);
+
     return (
         <>
             <div className={css.container}>
-                <div className="layout_container sec1">
+                <div
+                    id="section_view1"
+                    className="layout_container sec1"
+                    ref={sec1_ref}
+                >
                     <div className="inner">
                         <div className="box_bg_1">
                             <img
@@ -152,15 +197,19 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="layout_container sec2">
+                <div
+                    id="section_view2"
+                    className="layout_container sec2"
+                    ref={sec2_ref}
+                >
                     <div className="line_circle line1">
                         <img src="/image/icon/line-linear.svg" />
-                        <div className="line_circle line2">
-                            <img src="/image/icon/line-linear.svg" />
-                            <div className="line_circle line3">
-                                <img src="/image/icon/line-linear.svg" />
-                            </div>
-                        </div>
+                    </div>
+                    <div className="line_circle line2">
+                        <img src="/image/icon/line-linear.svg" />
+                    </div>
+                    <div className="line_circle line3">
+                        <img src="/image/icon/line-linear.svg" />
                     </div>
 
                     <div className="group_content">
@@ -185,8 +234,11 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-
-                <div className="layout_container sec3">
+                <div
+                    id="section_view3"
+                    className="layout_container sec3"
+                    ref={sec3_ref}
+                >
                     <div className="bg">
                         <img src={`/image/home/background_sec3.png`} />
                     </div>
@@ -197,7 +249,11 @@ export default function Home() {
                     <div className="contianer_card">
                         {mock_card_data.map((data, i) => {
                             return (
-                                <Card_goal key={i} img={data.img} text={data.text} />
+                                <Card_goal
+                                    key={i}
+                                    img={data.img}
+                                    text={data.text}
+                                />
                             );
                         })}
                     </div>
@@ -222,16 +278,18 @@ const CardHighlight = (props) => {
 
 const Card_goal = ({ img, text }) => {
     return (
-        <div class="container">
+        <div className="container">
             <div className="group_img">
-                <img src={img} alt="Example Image" class="image" />
-                <div class="text-overlay" data-font={`bol`}>{text}</div>
-                <div class="linear"></div>
+                <img src={img} alt="Example Image" className="image" />
+                <div className="text-overlay" data-font={`bol`}>
+                    {text}
+                </div>
+                <div className="linear"></div>
             </div>
             <div className="box_hover">
                 <div className="text_hover">สร้างแผนเลย</div>
                 <div className="ic_arrow">
-                    <img src="/image/icon/arrow.svg"/>
+                    <img src="/image/icon/arrow.svg" />
                 </div>
             </div>
         </div>
